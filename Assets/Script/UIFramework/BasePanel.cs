@@ -20,7 +20,7 @@ public abstract class BasePanel : MonoBehaviour
 
     public abstract void OnEnter();
 
-    public abstract void OnBeforeExie();
+    public abstract void OnBeforeExit();
 
     public abstract void OnExit();
 
@@ -29,6 +29,8 @@ public abstract class BasePanel : MonoBehaviour
     //如果要使用自己的动画  把面板上的 managedAnimation = false 播放完动画后要使用 UIPanelManager.Instance.PanelFinishedAnimation() 来通知 panelmanager
     public virtual void StartEnterAnimation() { }
     public virtual void StartExitAnimation() { }
+
+    public virtual bool CanPopPanel() { return true; }
 
     //默认框架管理动画
     public bool managedAnimation = true;
